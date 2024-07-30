@@ -1,0 +1,236 @@
+/* Reset de margens, preenchimento e caixa de modelo */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Definindo variáveis de cores */
+:root {
+    --color1: #4B332F;
+    --color2: #2F3540;
+    --color3: #07080D;
+    --color4: #151626;
+    --color5: #D9D5C5;
+}
+
+/* Estilo do corpo da página */
+body {
+    background-image: url('../imagens/agenda-968603_1280.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilo do contêiner principal */
+#main-cool {
+    background-color: var(--color1);
+    width: 530px;
+    height: auto;
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Estilo do título */
+h1 {
+    color: #fff;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Estilo da seção principal */
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+/* Estilo do campo de entrada da tarefa */
+#task {
+    background-color: var(--color5);
+    height: 38px;
+    width: 100%;
+    max-width: 453px;
+    margin: 16px 0;
+    border-radius: 10px;
+    padding: 8px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Estilo do campo de entrada da tarefa ao receber foco */
+#task:focus {
+    border: 2px solid var(--color3);
+    box-shadow: 0 0 5px var(--color3);
+    outline: none;
+}
+
+/* Estilo dos campos de data e hora */
+.ctn-input {
+    gap: 20px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 453px;
+}
+
+#date-task, #timeHours {
+    background-color: var(--color5);
+    height: 38px;
+    width: 100px;
+    margin: 16px 0;
+    border-radius: 10px;
+    padding: 8px;
+}
+
+/* Estilo dos botões */
+#btn-form {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 453px;
+    margin-bottom: 20px;
+}
+
+/* Estilo dos ícones de adição e remoção */
+.add-span, .remove-span, .remove-line {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+#adicionar, #remove, #del-line {
+    background-color: transparent;
+    border: none;
+}
+
+.add-span {
+    background-color: green;
+    color: #fff;
+    border: 2px solid var(--color5);
+}
+
+.add-span:hover {
+    background-color: darkgreen;
+}
+
+.remove-span {
+    background-color: red;
+    color: #fff;
+    border: 2px solid var(--color5);
+}
+
+.remove-span:hover {
+    background-color: darkred;
+}
+
+.remove-line {
+    background-color: transparent;
+    color: #fff;
+    border: 2px solid var(--color5);
+}
+
+.remove-line:hover {
+    background-color: var(--color2);
+}
+
+#del-line {
+    display: none;
+}
+
+/* Estilo da lista de tarefas */
+#list {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 500px;
+}
+
+/* Estilo do cabeçalho da lista de tarefas */
+.title-main {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+    border: 2px solid var(--color4);
+    background-color: var(--color5);
+    font-size: 18px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.title-primary, .title-second, .title-three, .title-check, .primary, .second, .three, .check {
+    text-align: center;
+    background-color: transparent;
+}
+
+.title-primary, .primary {
+    width: 300px;
+    border-right: 2px solid var(--color4);
+}
+
+.title-second, .second, .title-three, .three, .title-check, .check {
+    width: 100px;
+    border-right: 2px solid var(--color4);
+}
+
+.title-check, .check {
+    border-right: none;
+}
+
+/* Estilo dos itens da lista de tarefas */
+.li-organizacao {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    border: 2px solid var(--color4);
+    background-color: var(--color5);
+    font-size: 18px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    transition: background-color 0.3s ease;
+}
+
+/* Estilo dos itens selecionados na lista */
+.selected {
+    background-color: var(--color3) !important;
+    color: #fff;
+    text-decoration: line-through solid red;
+}
+
+/* Estilo dos checkboxes */
+.completed-task {
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    margin: 0;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.completed-task:checked {
+    background-color: var(--color4);
+    border-color: var(--color3);
+}
+
+/* Estilo dos campos de entrada ao receber foco */
+#date-task:focus, #timeHours:focus {
+    border: 2px solid var(--color3);
+    box-shadow: 0 0 5px var(--color3);
+    outline: none;
+}
