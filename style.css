@@ -1,0 +1,22 @@
+.container {
+    background-image: url('./login-7626822_1280.jpg');
+    background-size: cover;
+    background-position: center;
+    
+}
+
+.form-check-label , .text-center, label {
+    color: rgb(216, 216, 46);
+    
+    
+
+}
+
+
+@media screen and (max-width:576px)  {
+    .form-check-label {
+        flex-wrap: wrap;
+        max-width:200px;
+        justify-content: center;
+    }    
+}
