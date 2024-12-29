@@ -4,6 +4,10 @@
     box-sizing: border-box;
     font-family: Roboto, sans-serif;
 }
+//deixar html mais suave
+html {
+    scroll-behavior: smooth;
+}
 
 //MIXIN_LIMPAR-ESTILO-LI
 .clear-style() {
@@ -81,6 +85,7 @@ section {
                 border-radius: 8px;
                 margin-top: 8px;
                 text-decoration: none;
+
                 &:hover {
                     background-color: #4cd137;
                 }
@@ -90,25 +95,64 @@ section {
     }
 }
 
-    //medias_query
+footer {
+    display: flex;
+    height: 150px;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #182C61;
 
-    @media screen and (max-width: 1023px) {
-        .container {
-            max-width: 80%;
-        }
+    .social-link {
 
-        .products {
-            grid-template-columns: repeat(2, 48.5%);
-            column-gap: 3%;
-        }
-    }
+        img {
+            border-radius: 50%;
+            margin: 0 1rem;
+            transition: transform 0.3s ease;
+            &:hover{
+                transform: scale(1.2);
+            }
 
-    @media screen and (max-width: 767px) {
-        .products {
-            display: block;
-        }
-
-        .product-item {
-            margin-bottom: 32px;
         }
     }
+
+    p {
+        color: #fff;
+        margin-top: 16px;
+
+        a {
+            .clear-style();
+            text-decoration: none;
+            color: #4cd137;
+            transition: transform 0.3s ease;
+
+            &:hover {
+                transform: scale(1.2);
+            }
+        }
+
+    }
+}
+
+//medias_query
+
+@media screen and (max-width: 1023px) {
+    .container {
+        max-width: 80%;
+    }
+
+    .products {
+        grid-template-columns: repeat(2, 48.5%);
+        column-gap: 3%;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .products {
+        display: block;
+    }
+
+    .product-item {
+        margin-bottom: 32px;
+    }
+}
