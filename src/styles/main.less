@@ -1,3 +1,7 @@
+@import 'maps.less';
+@import 'variaveis.less';
+@breakpoint-mobile: ~"and (max-width: 767px)";
+@breakpoint-desktop: ~"and (max-width: 1023px)";
 * {
     margin: 0;
     padding: 0;
@@ -6,7 +10,7 @@
 }
 //deixar html mais suave
 html {
-    scroll-behavior: smooth;
+    scroll-behavior: @suave;
 }
 
 //MIXIN_LIMPAR-ESTILO-LI
@@ -15,13 +19,13 @@ html {
 }
 //MIXIN_TITLE_COO/SOMBRA
 .title-coo() {
-    color: #182C61;
-            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.459);
+    color: #mapsColor[corPrincipal];
+            text-shadow: 2px 2px 8px #mapsColor[sombra];
             font-weight: 700;
 }
 
 body {
-    background-color: #f5f6fa;
+    background-color: #mapsColor[corSecundaria];
 
     li {
         .clear-style();
@@ -31,7 +35,7 @@ body {
 
 
 header {
-    background-color: #182C61;
+    background-color: #mapsColor[corPrincipal];
     z-index: 999;
     position: sticky;
     top: 0;
@@ -69,7 +73,7 @@ header {
         margin-left: 24px;
 
         a {
-            color: #fff;
+            color: #mapsColor[corSecundaria];
             text-decoration: none;
         }
     }
@@ -77,6 +81,7 @@ header {
 
 section {
     #about{
+        padding: 0.5rem;
         h2 {
             .title-coo();
         }
@@ -110,8 +115,8 @@ section {
 
             .product-button {
                 display: block;
-                background-color: #44bd32;
-                color: #fff;
+                background-color: #mapsColor[btnNormal];
+                color: #mapsColor[corSecundaria];
                 text-align: center;
                 padding: 8px 0;
                 border-radius: 8px;
@@ -119,7 +124,7 @@ section {
                 text-decoration: none;
 
                 &:hover {
-                    background-color: #4cd137;
+                    background-color: #mapsColor[btnEfeito];
                 }
             }
 
@@ -134,7 +139,7 @@ footer {
     align-items: center;
     flex-direction: column;
     justify-content: center;
-    background-color: #182C61;
+    background-color: #mapsColor[corPrincipal];
 
     .social-link {
 
@@ -150,13 +155,13 @@ footer {
     }
 
     p {
-        color: #fff;
+        color: #mapsColor[corSecundaria];
         margin-top: 16px;
 
         a {
             .clear-style();
             text-decoration: none;
-            color: #4cd137;
+            color: #mapsColor[btnEfeito];
             transition: transform 0.3s ease;
 
             &:hover {
@@ -170,7 +175,7 @@ footer {
 //medias_query
 
 
-@media screen and (max-width: 1023px) {
+@media @breakpoint-desktop {
     .container {
         max-width: 80%;
     }
@@ -182,7 +187,9 @@ footer {
 }
 
 
-@media screen and (max-width: 767px) {
+@media @breakpoint-mobile {
+
+
     .products {
         display: block;
     }
