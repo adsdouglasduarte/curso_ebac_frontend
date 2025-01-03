@@ -7,7 +7,7 @@ module.exports = function (grunt) {
         less: {
             development: {
                 files: {
-                    'main.css': 'main.less'
+                    'dev/styles/main.css': 'src/styles/main.less'
                 }
             },
             production: {
@@ -15,46 +15,16 @@ module.exports = function (grunt) {
                     compress: true
                 },
                 files: {
-                    'main.min.css': 'main.less'
+                    'dist/styles/main.min.css': 'src/styles/main.less'
                 }
             }
-        },
-        sass: {
-            dist: {
-                options: {
-                    style: 'compressed'
-                },
-                files: {
-                    'main2.css': 'main2.scss'
-                }
-            }
-        },
-        concurrent: {
-            target: ['tarefaDemorada', 'olaGrunt', 'less', 'sass']
         }
-    })
-
-    //tarefa de registro de tarefas 
-    grunt.registerTask('olaGrunt', function () {
-        const done = this.async()
-        setTimeout(function () {
-            console.log('Ola Grunt!')
-            done()
-        }, 3000)
-    })
-
-    grunt.registerTask('tarefaDemorada', function () {
-        const done = this.async()
-        setTimeout(function () {
-            console.log('Demorei!')
-            done()
-        }, 4000)
+        
     })
 
     grunt.loadNpmTasks('grunt-contrib-less')
-    grunt.loadNpmTasks('grunt-contrib-sass')
-    grunt.loadNpmTasks('grunt-concurrent')
 
     //tarefa default
-    grunt.registerTask('default', ['concurrent'])
+    grunt.registerTask('default', ['less:development'])
+    grunt.registerTask('build', ['less:production'])
 }
