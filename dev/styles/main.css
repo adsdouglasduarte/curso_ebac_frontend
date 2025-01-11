@@ -35,3 +35,14 @@ main button {
   color: #fff;
   border-bottom: 6px solid #fff;
 }
+.result {
+  display: none;
+  padding: 16px;
+  margin-top: 120px;
+  border: 8px dotted #fff;
+}
+.result span {
+  font-weight: bold;
+  font-size: 3em;
+  display: block;
+}
