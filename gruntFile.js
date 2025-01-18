@@ -27,6 +27,10 @@ module.exports = function (grunt) {
             html:{
                 files:['src/index.html'],
                 tasks: ['replace:dev']
+            },
+            js: {
+                files: ['src/scripts/**/*.js'],
+                tasks: ['jshint']
             }
         },
         replace: {
@@ -93,6 +97,9 @@ module.exports = function (grunt) {
                     'dist/scripts/main.min.js':'src/scripts/main.js'
                 }
             }
+        },
+        jshint: {
+            all: ['src/scripts/**/*.js']
         }
     })
 
@@ -103,9 +110,11 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-htmlmin')
     grunt.loadNpmTasks('grunt-contrib-clean')
     grunt.loadNpmTasks('grunt-contrib-uglify')
+    grunt.loadNpmTasks('grunt-contrib-jshint')
+
     
 
     // Tarefas registradas
     grunt.registerTask('default', ['watch'])
-    grunt.registerTask('build', ['less:production', 'htmlmin:dist','replace:dist','clean','uglify'])
+    grunt.registerTask('build', ['clean', 'jshint', 'less:production', 'htmlmin:dist', 'replace:dist', 'uglify'])
 }
