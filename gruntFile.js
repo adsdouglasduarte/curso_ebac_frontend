@@ -116,5 +116,5 @@ module.exports = function (grunt) {
 
     // Tarefas registradas
     grunt.registerTask('default', ['watch'])
-    grunt.registerTask('build', ['clean', 'jshint', 'less:production', 'htmlmin:dist', 'replace:dist', 'uglify'])
+    grunt.registerTask('build', ['jshint', 'less:production', 'htmlmin:dist', 'replace:dist', 'uglify', 'clean'])
 }
