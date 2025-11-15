@@ -3,6 +3,7 @@ class Pessoa {
     this.nome = nome
   }
 }
+// Aluno herda de Pessoa
 
 class Aluno extends Pessoa {
   constructor(nome, nota) {
