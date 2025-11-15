@@ -1,0 +1,20 @@
+{
+  "name": "exercicio_typescript_douglas",
+  "version": "1.0.0",
+  "description": "Exercício de TypeScript do Douglas",
+  "main": "exercicio.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/exercicio.js"
+  },
+  "keywords": [
+    "typescript",
+    "exercicio"
+  ],
+  "author": "Douglas Duarte",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "typescript": "^5.9.3"
+  }
+}
